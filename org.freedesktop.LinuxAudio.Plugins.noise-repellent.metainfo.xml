@@ -25,6 +25,8 @@
     <url type="homepage">https://github.com/lucianodato/noise-repellent</url>
     <url type="help">https://github.com/lucianodato/noise-repellent/wiki</url>
     <releases>
+        <release version="0.2.5" date="2026-01-17" />
+        <release version="0.2.4" date="2026-01-13" />
         <release version="0.2.3" date="2022-05-19" />
         <release version="0.2.2" date="2022-05-14" />
     </releases>
