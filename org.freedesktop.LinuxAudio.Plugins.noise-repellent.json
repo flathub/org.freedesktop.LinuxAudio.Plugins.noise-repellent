@@ -34,7 +34,7 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/lucianodato/noise-repellent/archive/refs/tags/v0.2.5.tar.gz",
-                    "sha256": "dccc8eb5769b19c1448083b6a789156f5d12f87ff90a9ea187a04cafa173931f"
+                    "sha256": "7b128116d70c957623c213bc9799a5774b691a31301b562c0e3406a8b05e0b2c"
                 },
                 {
                     "type": "git",
