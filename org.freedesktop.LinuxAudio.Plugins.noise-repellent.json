@@ -10,6 +10,7 @@
         "prepend-pkg-config-path": "/app/extensions/Plugins/noise-repellent/lib/pkgconfig"
     },
     "cleanup": [
+        "/bin",
         "/include",
         "/lib",
         "/pkgconfig",
@@ -20,26 +21,43 @@
         "shared-modules/linux-audio/fftw3f-static.json",
         {
             "name": "noise-repellent",
-            "buildsystem": "meson",
+            "buildsystem": "cmake-ninja",
             "config-opts": [
-                "--buildtype=release",
-		"-Dstatic_libspecbleach=true",
-                "--libdir="
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DENABLE_AVX=ON",
+                "-DUSE_SYSTEM_FREETYPE=ON",
+                "-DUSE_SYSTEM_FFTW=ON",
+                "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
+                "-DSPECBLEACH_INSTALL=OFF",
+                "-DBUILD_SHARED_LIBS=OFF"
             ],
+            "no-make-install": true,
             "post-install": [
-                "strip ${FLATPAK_DEST}/lv2/*.lv2/*.so",
-                "install -Dm644 ../org.freedesktop.LinuxAudio.Plugins.noise-repellent.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo"
+                "install -d ${FLATPAK_DEST}/lv2 ${FLATPAK_DEST}/vst3",
+                "cp -R NoiseRepellent_artefacts/Release/LV2/Noise\\ Repellent.lv2 ${FLATPAK_DEST}/lv2/",
+                "strip ${FLATPAK_DEST}/lv2/Noise\\ Repellent.lv2/libNoise\\ Repellent.so",
+                "cp -R NoiseRepellent_artefacts/Release/VST3/Noise\\ Repellent.vst3 ${FLATPAK_DEST}/vst3/",
+                "strip ${FLATPAK_DEST}/vst3/Noise\\ Repellent.vst3/Contents/*64-linux/Noise\\ Repellent.so",
+                "install -Dm644 org.freedesktop.LinuxAudio.Plugins.noise-repellent.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/lucianodato/noise-repellent/archive/refs/tags/v0.2.5.tar.gz",
-                    "sha256": "7b128116d70c957623c213bc9799a5774b691a31301b562c0e3406a8b05e0b2c"
+                    "url": "https://github.com/lucianodato/noise-repellent/archive/refs/tags/v0.3.2.tar.gz",
+                    "sha256": "a741b94a51a22de9f4b135b1d6efc00c39e43e9e25278b9360caa254cb861398"
+                },
+                {
+                    "type": "git",
+                    "url": "https://github.com/juce-framework/JUCE.git",
+                    "tag": "8.0.4",
+                    "commit": "51d11a2be6d5c97ccf12b4e5e827006e19f0555a",
+                    "dest": "_deps/juce-src"
                 },
                 {
                     "type": "git",
                     "url": "https://github.com/lucianodato/libspecbleach.git",
-                    "commit": "41d3f58310391e05ecfb8b7c9efb62ea2ba8ef05",
+                    "tag": "v0.3.1",
+                    "commit": "580c05e7b64015c041ed00af554ffdd5ee640c79",
                     "dest": "subprojects/libspecbleach"
                 },
                 {
