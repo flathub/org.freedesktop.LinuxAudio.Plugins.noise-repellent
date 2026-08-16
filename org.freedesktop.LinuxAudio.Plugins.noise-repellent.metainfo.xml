@@ -3,9 +3,9 @@
     <id>org.freedesktop.LinuxAudio.Plugins.noise-repellent</id>
     <extends>org.freedesktop.LinuxAudio.BaseExtension</extends>
     <name>noise-repellent</name>
-    <summary>noise-repellent LV2 plugins</summary>
+    <summary>noise-repellent LV2/VST3 plugins</summary>
     <description>
-      <p>A suite of LV2 plugins for noise reduction. Features:</p>
+      <p>A suite of LV2 and VST3 plugins for noise reduction. Features:</p>
       <ul>
         <li>Adaptive noise reduction plugin for low latency voice
         denoise.</li>
@@ -25,9 +25,19 @@
     <url type="homepage">https://github.com/lucianodato/noise-repellent</url>
     <url type="help">https://github.com/lucianodato/noise-repellent/wiki</url>
     <releases>
-        <release version="0.2.5" date="2026-01-17" />
-        <release version="0.2.4" date="2026-01-13" />
-        <release version="0.2.3" date="2022-05-19" />
-        <release version="0.2.2" date="2022-05-14" />
+      <release version="0.3.2" date="2026-08-14" />
+      <release version="0.3.1" date="2026-08-08" />
+      <release version="0.3.0" date="2026-08-01">
+        <description>
+          <ul>
+            <li>Added VST3 plugins</li>
+            <li>2d NLM denoiser</li>
+          </ul>
+        </description>
+      </release>
+      <release version="0.2.5" date="2026-01-17" />
+      <release version="0.2.4" date="2026-01-13" />
+      <release version="0.2.3" date="2022-05-19" />
+      <release version="0.2.2" date="2022-05-14" />
     </releases>
 </component>
