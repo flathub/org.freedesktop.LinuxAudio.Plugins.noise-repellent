@@ -43,8 +43,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/lucianodato/noise-repellent/archive/refs/tags/v0.3.2.tar.gz",
-                    "sha256": "a741b94a51a22de9f4b135b1d6efc00c39e43e9e25278b9360caa254cb861398"
+                    "url": "https://github.com/lucianodato/noise-repellent/archive/refs/tags/v0.4.0.tar.gz",
+                    "sha256": "9ba0d31bb130d94215532f325e88f7a486da8318e6d6a3856d0c76c743b5992c"
                 },
                 {
                     "type": "git",
@@ -56,8 +56,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/lucianodato/libspecbleach.git",
-                    "tag": "v0.3.1",
-                    "commit": "580c05e7b64015c041ed00af554ffdd5ee640c79",
+                    "tag": "v0.4.0",
+                    "commit": "c5a34666166680060e6c08e214941ec3ebfcde4e",
                     "dest": "subprojects/libspecbleach"
                 },
                 {
